@@ -1,14 +1,15 @@
-/* GreenSock*/
+/*Biblioteca GreenSock*/
 const loadingBolls = document.querySelectorAll(".loading-ball");
 /*esconde mostra*/
-const btn = document.querySelector("#show-or-hide");
-const container = document.querySelector("#container");
+const btn = document.querySelector("#projects-show");
+const container = document.querySelector("#projects-container");
 /*Menu Mobile*/
 const nav = document.querySelector(".container-fluid");
 const btnMenu = document.querySelector(".btn-menu");
-const menu = document.querySelector("#menu");
+const menu = document.querySelector(".navbar-nav");
+const menuItems = document.querySelectorAll(".navbar-nav .nav-item");
 
-/* GreenSock*/
+/*Biblioteca GreenSock*/
 TweenMax.staggerFromTo(
   loadingBolls,
   0.75,
@@ -45,7 +46,6 @@ btn.addEventListener("click", function () {
 });
 
 /*Menu Mobile*/
-
 function handleButtonClick(event) {
   if (event.type === "touchstart") event.preventDefault();
   event.stopPropagation();
@@ -78,11 +78,20 @@ function setAria() {
   const isActive = nav.classList.contains("active");
   btnMenu.setAttribute("aria-expanded", isActive);
   if (isActive) {
-    btnMenu.setAttribute("aria-label", "Fechar Menu");
+    btnMenu.setAttribute("aria-label", "Close Menu");
   } else {
-    btnMenu.setAttribute("aria-label", "Abrir Menu");
+    btnMenu.setAttribute("aria-label", "Open Menu");
   }
 }
+
+function handleMenuItemClick() {
+  nav.classList.remove("active");
+  setAria();
+}
+
+menuItems.forEach((item) => {
+  item.addEventListener("click", handleMenuItemClick);
+});
 
 btnMenu.addEventListener("click", handleButtonClick);
 btnMenu.addEventListener("touchstart", handleButtonClick);

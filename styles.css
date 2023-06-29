@@ -1,6 +1,7 @@
 :root {
   --cor-de-fundo: #f8f6d3;
   --cor-branco: #ffff;
+  --color-fundo-project: rgb(235, 235, 216);
   --cor-primario: rgb(63, 8, 27);
   --cor-secundario: rgb(235, 235, 89);
 }
@@ -13,10 +14,7 @@
   padding: 0;
 }
 
-body {
-  background: var(--cor-de-fundo);
-}
-
+/*start navbar*/
 .navbar {
   margin: 0;
   padding: 0;
@@ -29,20 +27,20 @@ body {
   z-index: 1;
 }
 
-.d-inline-block:hover {
+.nav-img:hover {
   animation: is-rotating 1s infinite;
 }
 
 .navbar-title {
   color: var(--cor-branco);
-  font-size: 2em;
+  font-size: 2rem;
   padding: 5px;
 }
 
 .navbar-nav {
   flex-direction: row;
   justify-content: end;
-  margin: 1em;
+  margin: 1rem;
 }
 
 .nav-link {
@@ -55,8 +53,9 @@ body {
 .nav-link:hover {
   color: var(--cor-secundario);
   text-decoration: underline;
-} /* fim nv*/
+} /* end navbar*/
 
+/*start home*/
 #home {
   display: inline-block;
   position: relative;
@@ -69,17 +68,17 @@ body {
   margin-right: 100%;
 }
 
-.home-img-banner-center {
+.home-img-center {
   display: block;
   margin-right: auto;
   margin-left: auto;
   height: 100%;
-  width: 15%;
+  width: 18%;
   border-radius: 50%;
   position: relative;
 }
 
-.home-img-banner-center:hover {
+.home-img-center:hover {
   transform: rotate(15deg);
 }
 
@@ -95,13 +94,13 @@ body {
 .home-linkedin {
   display: block;
   text-align: center;
-  margin: 1% 1% 5%;
   position: relative;
+  padding-bottom: 5%;
 }
 
 .home-link {
   color: var(--cor-branco);
-  font-size: 2em;
+  font-size: 2rem;
   text-decoration: none;
   border: 2px solid var(--cor-branco);
   padding: 0.7%;
@@ -110,8 +109,20 @@ body {
 
 .home-link:hover {
   border: 4px solid var(--cor-secundario);
-} /* fim home*/
+} /* end home*/
 
+/*start about*/
+#about {
+  background: var(--cor-de-fundo);
+}
+.contact-start,
+.projects-start,
+.about-start {
+  padding: 5%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 .about-subtitle,
 .projects-subtitle,
 .contact-subtitle {
@@ -136,7 +147,7 @@ body {
   text-transform: uppercase;
   font-family: monospace;
   font-size: 1.8rem;
-  margin: 2% 20% 2% 20%;
+  margin: 4% 20%;
 }
 
 .about-loading {
@@ -144,7 +155,7 @@ body {
   background: var(--cor-de-fundo);
   display: flex;
   justify-content: center;
-  padding: 2%;
+  padding-bottom: 5%;
 }
 
 .about-loading-ball {
@@ -152,23 +163,25 @@ body {
   border-radius: 100%;
   display: block;
   height: 20px;
-  margin: 0 0.5em;
+  margin: 0 0.5rem;
   width: 20px;
-} /* fim about*/
+} /* end about*/
 
+/*start projects*/
 #projects {
+  background: var(--color-fundo-project);
   text-align: center;
-  background: rgb(235, 235, 216);
+  padding-bottom: 5%;
 }
 
 .projects-box,
-#container {
+#projects-container {
   display: flex;
   flex-wrap: wrap;
   gap: 29.5px;
   width: 100%;
   justify-content: center;
-  padding: 2%;
+  /*padding: 2%;*/
 }
 
 .pro {
@@ -198,67 +211,49 @@ body {
   transform: rotate(-50deg);
 }
 
-.pro div p {
+.projects-text {
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: 30px;
   color: var(--cor-branco);
 }
-#show-or-hide {
-  border: 3px solid var(--cor-secundario);
+#projects-show {
+  border: 0.2rem solid var(--cor-secundario);
   background: var(--cor-primario);
   color: var(--cor-branco);
   text-transform: uppercase;
   font-family: monospace;
-  width: 13%;
-  margin: 1.2%;
-  padding: 0.4%;
+  width: 13rem;
+  margin: 1.2rem;
+  padding: 0.4rem;
 }
 
-#show-or-hide:hover {
-  background: rgb(235, 235, 216);
+#projects-show:hover {
+  background: var(--color-fundo-project);
   color: var(--cor-primario);
   border: 3px solid var(--cor-primario);
 }
 
-.projects-github {
-  padding: 2%;
-}
-
-.link-github {
+.projects-link {
   text-decoration: none;
   color: var(--cor-primario);
   font-size: 1.5rem;
   font-family: monospace;
 }
 
-.link-github:hover {
+.projects-link:hover {
   text-decoration: underline;
-}
+} /* fim projeto*/
 
-/* fim projeto*/
-
+/*start contacs*/
 #contact {
-  position: sticky;
-  top: 0;
-  margin-bottom: 10%;
+  background: var(--cor-de-fundo);
+  padding-bottom: 2.3%;
 }
 
-.contact-start,
-.projects-start,
-.about-start {
-  padding: 5%;
-
-  align-items: center;
+.contact-go {
   display: flex;
-  flex-direction: column;
-}
-
-.contact-test {
-  width: 100%;
-  height: 100%;
   align-items: center;
-  display: flex;
   justify-content: center;
   flex-direction: column;
 }
@@ -272,14 +267,13 @@ body {
   font-family: monospace;
   text-decoration: none;
   font-size: 1.5rem;
-  padding: 2%;
-  margin: 1%;
+  padding: 4%;
 }
 
 .contact-link:hover,
 .contact-img:hover {
   animation: is-rotating 1s infinite;
-  border: 6px solid #e5e5e5;
+  border: 0.2px solid #e5e5e5;
   border-radius: 100%;
   border-top-color: #51d4db;
 }
@@ -287,20 +281,18 @@ body {
   to {
     transform: rotate(1turn);
   }
-}
+} /*end contacts*/
 
 .foot {
-  padding: 0.5%;
-  position: static;
-  top: 0;
   background: var(--cor-primario);
+  padding: 0.5%;
 }
 .foot-start {
   display: flex;
   justify-content: center;
 }
 
-.img-foot {
+.foot-img {
   width: 2rem;
   height: 100%;
 }
@@ -308,96 +300,44 @@ body {
   color: var(--cor-branco);
   text-transform: uppercase;
   font-family: monospace;
-  padding: 0.5%;
-  font-size: 1rem;
-  margin: 0;
+  font-size: 0.8rem;
 }
 .btn-menu {
   display: none;
 }
 
-#menu {
-  list-style: none;
-  display: flex;
-  gap: 0.5rem;
-}
-
-#menu a {
-  display: block;
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
-
-#menu a:hover {
-  background: var(--royal-blue-dark);
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--cor-primario);
-}
-
 @media screen and (max-width: 750px) {
-  /*.navbar-nav {
-    display: block;
-    position: absolute;
-    top: 4.6875rem;
-    left: 0;
-    background: var(--royal-blue-light);
-    text-align: center;
-    width: 100%;
-    height: 0;
-    z-index: 110;
-    /* visibility: hidden;
-    overflow-y: hidden;
-    transition: 0.5s;
-  }
-
-  .navbar-nav a {
-    padding: 1rem 0;
-    margin-inline: 1rem;
-    /* border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.16);
-    border-radius: 0;
-  }
-
-  .navbar-menu {
-    cursor: pointer;
-  }
-  .navbar-menu div {
-    width: 32px;
-    height: 2px;
-    background-color: var(--cor-branco);
-    margin: 8px;
-  }
-  .navbar-nav {
-    position: absolute;
-    top: 8vh;
-    right: 0;
-    width: 50vw;
-    height: 92vh;
-    background: var(--cor-primario);
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar-nav li {
-    margin-left: 0;
-  }*/
-
   .navbar-title {
-    display: none;
+    display: block;
+    color: var(--cor-secundario);
+    font-size: 1.5rem;
+    padding: 1%;
   }
 
+  .container-fluid {
+    background: rgba(61, 11, 48, 0.4);
+    margin: 0;
+  }
+
+  .home-titulo {
+    padding-top: 15%;
+  }
+
+  .home-img-center {
+    width: 30%;
+  }
+  .home-link {
+    font-size: 1.6rem;
+  }
   #menu {
     display: block;
-    /*position: absolute;
-    top: /*100%m 4.6875rem;
+    position: absolute;
+    top: 100%;
     margin: 0;
-    left: 0;*/
-    background: var(--cor-primario);
+    left: 0;
+    background: rgba(61, 11, 48, 0.4);
     text-align: center;
+    backdrop-filter: blur(10px);
     width: 100%;
     height: 0;
     z-index: 1;
@@ -408,7 +348,7 @@ body {
   #menu a {
     padding: 1rem 0;
     margin-inline: 1rem;
-    border-bottom: 0.0625rem solid var(--cor-branco);
+    border-bottom: 0.0625rem solid var(--cor-secundario);
     border-radius: 0;
   }
 
@@ -418,7 +358,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--cor-branco);
+    color: var(--cor-secundario);
     padding-block: 1rem;
     cursor: pointer;
   }
@@ -427,9 +367,9 @@ body {
     width: 1.25rem;
   }
 
-  .hamburger::before,
-  .hamburger::after {
-    content: " ";
+  .hamburger::after,
+  .hamburger::before {
+    content: "";
     display: block;
     width: 1.25rem;
     height: 0.125rem;
@@ -440,9 +380,10 @@ body {
   }
 
   .container-fluid.active #menu {
-    height: calc(100vh - 5.6875rem);
+    height: auto;
     visibility: visible;
     overflow-y: auto;
+    padding: 2%;
   }
   .container-fluid.active .hamburger {
     border-top-color: transparent;
